@@ -1,6 +1,6 @@
 package com.example.nbaplayers.interfaces
 
-import com.example.nbaplayers.Events
+import com.example.nbaplayers.utils.Events
 import com.example.nbaplayers.models.Team
 
 interface TeamListContract {

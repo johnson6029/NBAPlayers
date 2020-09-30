@@ -3,6 +3,7 @@ package com.example.nbaplayers
 import com.example.nbaplayers.api.TeamsListModel
 import com.example.nbaplayers.interfaces.TeamListContract
 import com.example.nbaplayers.models.Team
+import com.example.nbaplayers.utils.Events
 
 class TeamsPresenter(private var teamsListView: TeamListContract.View?) :
     TeamListContract.Presenter, TeamListContract.Model.OnFinishedListener {

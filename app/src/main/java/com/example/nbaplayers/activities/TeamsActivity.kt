@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbaplayers.DataManager
-import com.example.nbaplayers.Events
+import com.example.nbaplayers.utils.Events
 import com.example.nbaplayers.R
 import com.example.nbaplayers.TeamsPresenter
 import com.example.nbaplayers.adepter.TeamsAdapter

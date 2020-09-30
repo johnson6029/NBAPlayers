@@ -1,6 +1,7 @@
 package com.example.nbaplayers
 
 import com.example.nbaplayers.models.Team
+import com.example.nbaplayers.utils.Events
 
 object DataManager {
     private var teamsList: ArrayList<Team> = arrayListOf()

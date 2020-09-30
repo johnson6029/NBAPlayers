@@ -8,7 +8,7 @@ import retrofit2.Response
 
 class TeamsListModel : TeamListContract.Model {
     override fun getMovieList(onFinishedListener: TeamListContract.Model.OnFinishedListener?) {
-        val apiService: ApiInterface = ApiClient().getClient().create(ApiInterface::class.java)
+        val apiService: ApiInterface = ApiClient().retrofitClient.create(ApiInterface::class.java)
         val call = apiService.getTeamData()
 
         call.enqueue(object : Callback<ArrayList<Team>> {

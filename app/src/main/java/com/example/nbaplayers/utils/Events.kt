@@ -1,4 +1,4 @@
-package com.example.nbaplayers
+package com.example.nbaplayers.utils
 
 enum class Events {
     Alpahbetic,

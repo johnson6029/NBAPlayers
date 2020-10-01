@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="7dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <TextView
@@ -15,55 +17,70 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Firstname"
+            android:textSize="16dp"
+            android:textStyle="bold"
             android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/textLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="16dp"
             android:text="Lastname"
+            android:textStyle="bold"
             android:textColor="@android:color/black" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
-
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Position"
+            android:text="Position :"
             android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/textPlayerPosition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:text="25"
             android:textColor="@android:color/black" />
-
+</LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:text="Number"
+
+            android:text="Number :"
             android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/textPlayerNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
+           android:layout_marginLeft="10dp"
             android:text="25"
             android:textColor="@android:color/black" />
+        </LinearLayout>
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="7dp"
+        android:background="#CFCFCF"/>
 </LinearLayout>

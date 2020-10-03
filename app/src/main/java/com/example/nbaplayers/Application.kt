@@ -15,6 +15,4 @@ class Application : Application() {
         val appContext: Context?
             get() = context
     }
-
-
 }

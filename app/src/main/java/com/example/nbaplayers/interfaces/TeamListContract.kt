@@ -1,6 +1,6 @@
 package com.example.nbaplayers.interfaces
 
-import com.example.nbaplayers.utils.Events
+import com.example.nbaplayers.utils.FilterTypes
 import com.example.nbaplayers.models.Team
 
 interface TeamListContract {
@@ -10,20 +10,19 @@ interface TeamListContract {
             fun onFailure(t: Throwable?)
         }
 
-        fun getMovieList(onFinishedListener: OnFinishedListener?)
+        fun getTeamsList(onFinishedListener: OnFinishedListener?)
     }
 
     interface View {
         fun showProgress()
         fun hideProgress()
-        fun setDataToRecyclerView(teamsList: ArrayList<Team>?)
+        fun setDataToView(teamsList: ArrayList<Team>?)
         fun onResponseFailure(throwable: Throwable?)
         fun filterTeams(teamsList: List<Team>?)
     }
 
     interface Presenter {
-        fun onDestroy()
         fun requestDataFromServer()
-        fun filterTeams(events: Events)
+        fun filterTeams(events: FilterTypes)
     }
 }

@@ -1,7 +1,7 @@
 package com.example.nbaplayers.utils
 
-enum class Events {
-    Alpahbetic,
+enum class FilterTypes {
+    SortByAlpahbets,
     sortedByWins,
     sortedByLosses
 }

@@ -1,9 +1,11 @@
-package com.example.nbaplayers
+package com.example.nbaplayers.presenter
 
+import com.example.nbaplayers.LocalDataStorage
 import com.example.nbaplayers.api.TeamsListModel
 import com.example.nbaplayers.interfaces.TeamListContract
 import com.example.nbaplayers.models.Team
-import com.example.nbaplayers.utils.Events
+import com.example.nbaplayers.utils.FilterTeams
+import com.example.nbaplayers.utils.FilterTypes
 
 class TeamsPresenter(private var teamsListView: TeamListContract.View?) :
     TeamListContract.Presenter, TeamListContract.Model.OnFinishedListener {
@@ -15,24 +17,23 @@ class TeamsPresenter(private var teamsListView: TeamListContract.View?) :
     }
 
     override fun onFinished(teamsList: ArrayList<Team>?) {
-        teamsListView?.setDataToRecyclerView(teamsList)
+        teamsListView?.setDataToView(teamsList)
         teamsListView?.hideProgress()
+        if (teamsList != null) LocalDataStorage.teamsList = teamsList
     }
 
     override fun onFailure(t: Throwable?) {
         teamsListView?.onResponseFailure(t)
     }
 
-    override fun onDestroy() {
-        this.teamsListView = null
-    }
-
     override fun requestDataFromServer() {
         teamsListView?.showProgress()
-        teamsListModel?.getMovieList(this)
+        teamsListModel?.getTeamsList(this)
     }
 
-    override fun filterTeams(events: Events) {
-        teamsListView?.filterTeams(DataManager.filter(events))
+    override fun filterTeams(events: FilterTypes) {
+        val teams = LocalDataStorage.teamsList
+        val filteredTeams = FilterTeams(teams).filterTeams(events)
+        teamsListView?.filterTeams(filteredTeams)
     }
 }

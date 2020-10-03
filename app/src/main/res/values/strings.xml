@@ -3,4 +3,5 @@
     <string name="sort_by_alphabets">Sort By Alphabets</string>
     <string name="sort_by_wins">Sort By Wins</string>
     <string name="sort_by_losses">Sort By Losses</string>
+    <string name="fail_response">"Failed to load data from server"</string>
 </resources>

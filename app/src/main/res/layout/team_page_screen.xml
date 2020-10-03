@@ -1,36 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="250dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/teamback"
+            android:scaleType="fitXY"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="#8D000000"
+            android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
         android:orientation="horizontal">
-    <TextView
+  <!--  <TextView
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TeamName:"
         android:textSize="16dp"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black" />-->
     <TextView
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:id="@+id/teamName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TeamName:"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black" />
-    </LinearLayout>
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="TeamName:"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@android:color/white" />
+    </LinearLayout>
+            <LinearLayout
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:paddingBottom="20dp"
+                android:orientation="horizontal">
+    <LinearLayout
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="horizontal">
         <TextView
             android:layout_marginLeft="10dp"
@@ -39,7 +72,7 @@
             android:layout_height="wrap_content"
             android:text="Wins:"
             android:textSize="16dp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
     <TextView
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -53,7 +86,9 @@
         android:textColor="@android:color/holo_green_dark" />
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="right"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
@@ -63,7 +98,7 @@
             android:layout_height="wrap_content"
             android:text="Losses:"
             android:textSize="16dp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white" />
     <TextView
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -76,6 +111,9 @@
         android:textSize="16dp"
         android:textColor="@android:color/holo_red_dark" />
     </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+</FrameLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -84,17 +122,20 @@
     <TextView
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Team Players:"
-        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Team Players"
+        android:textSize="20dp"
+        android:gravity="center"
         android:textColor="@android:color/black" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/playersRecylerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:nestedScrollingEnabled="false"
         tools:listitem="@layout/item_player_row" />
 </LinearLayout>
+</androidx.core.widget.NestedScrollView>

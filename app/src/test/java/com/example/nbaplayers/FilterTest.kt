@@ -18,14 +18,14 @@ class FilterTest{
     fun filterWinsTest(){
         val filterTeams = FilterTeams(teamsList)
         val filterList = filterTeams.filterTeams(events = FilterTypes.sortedByWins)
-        Assert.assertEquals(teamsList[0].wins,filterList[0].wins)
+        Assert.assertEquals(teamsList[0].wins,filterList[1].wins)
     }
 
     @Test
     fun filterLossesTest(){
         val filterTeams = FilterTeams(teamsList)
         val filterList = filterTeams.filterTeams(events = FilterTypes.sortedByLosses)
-        Assert.assertEquals(teamsList[0].losses,filterList[0].losses)
+        Assert.assertEquals(teamsList[0].losses,filterList[2].losses)
     }
 
     @Test
@@ -36,7 +36,7 @@ class FilterTest{
     }
 
     private fun setUpFilterData(){
-        val team1 = Team(fullName = "Chicago Bulls",wins = 16,losses = 5,id = 2,players = arrayListOf() )
+        val team1 = Team(fullName = "Chicago Bulls",wins = 16,losses = 5,id = 2,players = arrayListOf())
         val team2 = Team(fullName = "Boston Celtics",wins = 15,losses = 8,id = 1,players = arrayListOf())
         val team3 = Team(fullName = "Detroit Pistons",wins = 20,losses = 6,id = 3,players = arrayListOf())
 
